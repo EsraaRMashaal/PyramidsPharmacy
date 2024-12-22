@@ -61,7 +61,7 @@ PyramidsPharmacy/
 ├── docker-compose.yaml       # Docker Compose configuration file
 ├── Dockerfile                # Dockerfile for both frontend and backend services
 └── .env                      # Environment variables file (not included in the repository, needs to be created)
-
+```
 
 ## Contributing
 
