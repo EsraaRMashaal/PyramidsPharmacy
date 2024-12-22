@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./pyramidspharmacy  # Path to the backend (Django app)
+      dockerfile: Dockerfile       # Ensure you have a Dockerfile in the backend directory
+    image: webapp:latest
+    ports:
+      - "8000:8000"  # Expose Django backend on port 8000
+    depends_on:
+      - db  # Ensure the database service starts before the backend
+    env_file: .env  # Load environment variables from .env file in the same directory as docker-compose.yaml
+    command: ["python", "manage.py", "runserver", "0.0.0.0:8000"]  # Command to run Django server
+    networks:
+      - app-network
+
+  db:
+    image: postgres:latest  # Use the latest PostgreSQL image
+    environment:
+      POSTGRES_USER: ${DB_USER}  # These values will be pulled from the .env file
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"  # Expose PostgreSQL on port 5432
+    volumes:
+      - db-data:/var/lib/postgresql/data  # Persist database data
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend  # Path to the React frontend
+      dockerfile: Dockerfile  # Ensure you have a Dockerfile in the frontend directory
+    image: frontend:latest
+    ports:
+      - "5173:5173"  # Expose React frontend on port 5173
+    command: ["npm", "run", "dev", "--", "--host"]  # Command to run the React development server
+    networks:
+      - app-network
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Optional: To avoid issues with file changes in Docker on some systems
+
+volumes:
+  db-data:
+
+networks:
+  app-network:
