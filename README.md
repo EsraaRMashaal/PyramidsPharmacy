@@ -75,6 +75,8 @@ PyramidsPharmacy/
 └── .env                      # Environment variables file (not included in the repository, needs to be created)
 ```
 
+## Postman Collection can be found [here](https://galactic-rocket-649595.postman.co/workspace/My-Workspace~02bfb526-da9a-4ab4-8734-dbc4f8fede12/collection/24728437-0998060a-89af-4167-acde-6fd57e6e7a11?action=share&creator=24728437)
+
 ## Contributing
 
 Contributions are welcome! please feel free to submit a Pull Request. 
