@@ -7,6 +7,18 @@ This project is a web application for Pyramids Pharmacy, built with Django for t
 - Docker
 - Docker Compose
 
+## Technologies Used
+
+- Django REST Framework
+- React
+- PostgreSQL
+- Docker
+- Docker Compose
+- ApexCharts
+- Tailwind CSS
+- Vite
+- Axios
+
 ## Installation
 
 Follow these steps to set up and run the project:
