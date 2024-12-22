@@ -70,17 +70,13 @@ Contributions are welcome! please feel free to submit a Pull Request.
 ## Authors
 
 **Esraa Raffik Mashaal**  
-[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/esraamashaal/)
-
-[![GitHub](https://img.shields.io/badge/-GitHub-black?style=flat&logo=github&logoColor=white)](https://github.com/EsraaRMashaal)
-
-[![Gmail](https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=gmail&logoColor=white)](mailto:mailto:esraa.mashaal96@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/esraamashaal/)   [![GitHub](https://img.shields.io/badge/-GitHub-black?style=flat&logo=github&logoColor=white)](https://github.com/EsraaRMashaal)   [![Gmail](https://img.shields.io/badge/-Gmail-c14438?style=flat&logo=gmail&logoColor=white)](mailto:mailto:esraa.mashaal96@gmail.com)
 
 
 📫 How to reach me:
 
-📞 +20 1013589988  
-📍 Egypt  
-✉️ [esraa.mashaal96@gmail.com](mailto:esraa.mashaal96@gmail.com)
+    📞 +20 1013589988  
+    📍 Egypt  
+    ✉️ esraa.mashaal96@gmail.com
 
 
