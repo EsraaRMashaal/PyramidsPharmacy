@@ -54,13 +54,13 @@ Create a `.env` file in the root directory and add the following environment var
 
 The project structure is as follows:
     
-    ```plaintext
-    pyramidspharmacy/: Django backend application
-    frontend/: React frontend application
-    docker-compose.yaml: Docker Compose configuration file
-    Dockerfile: Dockerfile for the frontend and backend services
-    .env: Environment variables file (not included in the repository, needs to be created)
-    ```
+```plaintext
+pyramidspharmacy/: Django backend application
+frontend/: React frontend application
+docker-compose.yaml: Docker Compose configuration file
+Dockerfile: Dockerfile for the frontend and backend services
+.env: Environment variables file (not included in the repository, needs to be created)
+```
 
 ## Contributing
 
