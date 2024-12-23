@@ -41,13 +41,14 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    let isMounted = true; // Track if the component is mounted
+
     const fetchData = async () => {
       try {
         const medicationStatistics = await fetchMedicationStatistics();
+        if (!isMounted) return;
         setMedicationStatistics(medicationStatistics);
-        console.log(medicationStatistics);
       } catch (error) {
-        console.error(error);
         toast.error("Failed to fetch refill requests. Please try again.");
       }
     };
@@ -81,8 +82,16 @@ const Dashboard = () => {
     ? medicationStatistics.total_requests_by_status.map((stat) => stat.status)
     : [];
 
-const donutStatisticCard = medicationStatistics ? medicationStatistics.total_requests_by_user.map(stat => stat.total_requests) : [];
-const donutCategories = medicationStatistics ? medicationStatistics.total_requests_by_user.map(stat => stat.requested_by__username) : [];
+  const donutStatisticCard = medicationStatistics
+    ? medicationStatistics.total_requests_by_user.map(
+        (stat) => stat.total_requests
+      )
+    : [];
+  const donutCategories = medicationStatistics
+    ? medicationStatistics.total_requests_by_user.map(
+        (stat) => stat.requested_by__username
+      )
+    : [];
 
   const filterationOptions = [
     { name: "All", value: "all" },

@@ -114,12 +114,21 @@ docker-compose up --build
 
 - Frontend: Open your web browser and navigate to http://localhost:5173/.
 - Backend: Open your web browser and navigate to http://localhost:8000/.
+- All pages: 
+    - Login: http://localhost:5173/login
+    - Register: http://localhost:5173/signup
+    - Dashboard: http://localhost:5173/dashboard
+    - Medications: http://localhost:5173/medications
+    - Medications: http://localhost:5173/add-medication
+    - Refill Requests: http://localhost:5173/medications-refills
+    - Refill Requests: http://localhost:5173/medications-refills-request
 
 ### 5. Stopping the Containers (If Needed)
 
 ```sh
 docker-compose down
 ```
+
 ## Project Structure
 
 The project structure is organized as follows:
