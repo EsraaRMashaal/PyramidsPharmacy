@@ -41,6 +41,24 @@ Pyramids Pharmacy Management System is a web application designed to streamline 
 - Add a feature to alert the user when the medication is about to finish.
 - Add a feature to alert the user when the medication is out of stock.
 
+## Screenshots
+
+### Authentication Pages
+![Login](screenshots/login.png)
+![Register](screenshots/signup.png)
+
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Medications Module
+![Medications](screenshots/midication_list.png)
+![Add Medication](screenshots/add_medication.png)
+
+### Refill Requests
+![Refill Requests](screenshots/refill_requests.png)
+![Add Refill Request](screenshots/add_refill_request.png)
+
 
 ## Prerequisites
 
