@@ -33,9 +33,14 @@ Pyramids Pharmacy Management System is a web application designed to streamline 
 
 ## Future Enhancements
 
+- Add user roles and permissions to restrict access to certain features based on user roles.
 - Role-based access control to handle verification and rejection of refill requests.
 - Improved analytics and reporting on medication usage and refill trends.
 - Integration with third-party APIs for inventory management and supply chain optimization.
+- Add Medication based on expiration date and alert the user when the medication is about to expire.
+- Add a feature to alert the user when the medication is about to finish.
+- Add a feature to alert the user when the medication is out of stock.
+
 
 ## Prerequisites
 
