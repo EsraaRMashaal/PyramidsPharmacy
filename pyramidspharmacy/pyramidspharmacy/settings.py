@@ -32,13 +32,13 @@ SECRET_KEY = 'django-insecure-@i=w^n&s-aa^4a$hp1)1n#okq@zl%17mj8n-lqgfq$x@6*t!++
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 # print environment variables for debugging
-print('DEBUG:', DEBUG)
-print('SECRET_KEY:', SECRET_KEY)
-print('DB_NAME:', os.getenv('DB_NAME'))
-print('DB_USER:', os.getenv('DB_USER'))
-print('DB_PASSWORD:', os.getenv('DB_PASSWORD'))
-print('DB_HOST:', os.getenv('DB_HOST'))
-print('DB_PORT:', os.getenv('DB_PORT'))
+# print('DEBUG:', DEBUG)
+# print('SECRET_KEY:', SECRET_KEY)
+# print('DB_NAME:', os.getenv('DB_NAME'))
+# print('DB_USER:', os.getenv('DB_USER'))
+# print('DB_PASSWORD:', os.getenv('DB_PASSWORD'))
+# print('DB_HOST:', os.getenv('DB_HOST'))
+# print('DB_PORT:', os.getenv('DB_PORT'))
 
 
     
@@ -195,6 +195,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 
 # Default primary key field type

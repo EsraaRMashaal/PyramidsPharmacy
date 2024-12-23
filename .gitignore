@@ -7,6 +7,9 @@ __pycache__/
 venv/
 env/
 
+# Ignore static files (can be customized if necessary)
+staticfiles/
+
 # Ignore Django secret key and settings
 *.env
 
