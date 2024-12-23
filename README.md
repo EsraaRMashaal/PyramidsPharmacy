@@ -135,6 +135,42 @@ PyramidsPharmacy/
 
 ## Postman Collection can be found [here](https://galactic-rocket-649595.postman.co/workspace/My-Workspace~02bfb526-da9a-4ab4-8734-dbc4f8fede12/collection/24728437-0998060a-89af-4167-acde-6fd57e6e7a11?action=share&creator=24728437)
 
+## Intial Data
+
+To populate the database with initial data (medications), you can run the following SQL queries:
+
+```sh
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Amoxicillin', 'Antibiotic used to treat bacterial infections', 100, 12.50, 'Capsule', 'Pfizer', '2025-12-31', 'Antibiotics', true, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Ibuprofen', 'Nonsteroidal anti-inflammatory drug (NSAID) used to reduce fever and treat pain or inflammation', 200, 8.99, 'Tablet', 'Johnson & Johnson', '2024-11-30', 'Analgesics', false, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Paracetamol', 'Pain reliever and a fever reducer', 300, 5.99, 'Tablet', 'GlaxoSmithKline', '2023-10-15', 'Antipyretics', false, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Metformin', 'Used to improve blood sugar control in people with type 2 diabetes', 150, 15.00, 'Tablet', 'Merck', '2025-05-20', 'Antidiabetics', true, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Lisinopril', 'Used to treat high blood pressure (hypertension) and heart failure', 120, 10.50, 'Tablet', 'AstraZeneca', '2024-08-25', 'Antihypertensives', true, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Omeprazole', 'Used to treat gastroesophageal reflux disease (GERD) and other conditions caused by excess stomach acid', 180, 9.75, 'Capsule', 'Novartis', '2023-12-31', 'Antacids', false, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Cetirizine', 'Antihistamine used to relieve allergy symptoms', 250, 7.50, 'Tablet', 'Sanofi', '2024-04-15', 'Antihistamines', false, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Fluconazole', 'Antifungal medication used to treat infections caused by fungus', 90, 20.00, 'Tablet', 'Pfizer', '2025-01-10', 'Antifungals', true, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Acyclovir', 'Antiviral drug used to treat infections caused by herpes viruses', 110, 25.00, 'Tablet', 'GlaxoSmithKline', '2024-09-30', 'Antivirals', true, NOW(), NOW());
+
+INSERT INTO medication_medication (name, description, stock, price, dosage_form, manufacturer, expiry_date, category, prescription_required, created_at, updated_at)
+VALUES ('Dextromethorphan', 'Cough suppressant used to treat cough caused by the common cold or flu', 220, 6.50, 'Syrup', 'Johnson & Johnson', '2023-11-30', 'Antitussives', false, NOW(), NOW());
+```
+
 
 ## Contributing
 
