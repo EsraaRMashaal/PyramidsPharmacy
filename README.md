@@ -16,8 +16,8 @@ Pyramids Pharmacy Management System is a web application designed to streamline 
    - Provides a summary of key statistics:
      - All Medications: Displays the total count of medications available in the system.
      - Pending Requests: Shows the number of refill requests awaiting approval.
-     - Approved Requests: Lists the number of refill requests that have been approved.
-     - Rejected Requests: Displays the number of refill requests that have been rejected.  
+     - Approved Requests: Can approve the number of refill requests that have been approved [planned for future versions to manage by higher-role users]
+     - Rejected Requests: Can reject the number of refill requests that have been rejected [planned for future versions to manage by higher-role users]
 
 3. **Medications Module**
 
