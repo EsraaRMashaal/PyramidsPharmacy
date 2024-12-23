@@ -131,7 +131,7 @@ PyramidsPharmacy/
 │   ├── pyramidspharmacy/     # Core application logic
 │   ├── users/                # User management module
 ├── frontend/                 # React frontend application
-├── [docker-compose.yaml](http://_vscodecontentref_/3)       # Docker Compose configuration file
+├── docker-compose.yaml       # Docker Compose configuration file
 ├── Dockerfile                # Dockerfile for both frontend and backend services
 └── .env                      # Environment variables file (not included in the repository, needs to be created)
 ```
