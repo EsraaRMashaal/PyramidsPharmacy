@@ -1,5 +1,6 @@
 // React and hooks
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Third-party libraries
 import { toast } from "react-toastify";
@@ -60,12 +61,17 @@ const Tables = () => {
     { name: "Dashboard", link: "/dashboard" },
     { name: "Medications" },
   ];
+  const navigate = useNavigate();
+
   return (
     <>
       <Breadcrumb breadcrumbs={breadcrumbs} />
 
       <div className="flex justify-end my-5">
-        <button className="flex justify-center rounded bg-primary p-3 font-medium text-gray">
+        <button
+          className="flex justify-center rounded bg-primary p-3 font-medium text-gray"
+          onClick={() => navigate("/add-medication")}
+        >
           Add New Medication
         </button>
       </div>

@@ -33,7 +33,7 @@ class RefillRequestSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
     
     def get_approved(self, obj):
-        return obj.approved_by is not None
+        return obj.approved_by is not None and obj.status == 'Approved'
     
     def get_requested_at(self, obj):
         return obj.requested_at.strftime('%d-%m-%Y %I:%M %p')

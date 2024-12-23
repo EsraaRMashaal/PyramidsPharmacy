@@ -3,8 +3,9 @@ import React from "react";
 interface Column {
   header: string;
   accessor: string;
-  type?: "text" | "chip" | "boolean"; // Add more types as needed
+  type?: "text" | "chip" | "boolean" | "actions"; // Add more types as needed
   class?: string; // Custom class for the column
+  Cell?: (props: any) => JSX.Element; // Custom cell renderer
 }
 
 interface TableThreeProps {
@@ -21,7 +22,9 @@ const TableThree: React.FC<TableThreeProps> = ({ columns, data }) => {
   const renderCellContent = (
     type: string | undefined,
     value: any,
-    columnClass?: string
+    columnClass?: string,
+    row?: any,
+    column?: Column
   ) => {
     switch (type) {
       case "chip":
@@ -37,6 +40,9 @@ const TableThree: React.FC<TableThreeProps> = ({ columns, data }) => {
             {value ? "Yes" : "No"}
           </p>
         );
+      case "actions":
+        console.log(column?.Cell ? column.Cell({ row }) : null);
+        return column?.Cell ? column.Cell({ row }) : null;
       case "text":
       default:
         return <p>{value}</p>;
@@ -67,7 +73,7 @@ const TableThree: React.FC<TableThreeProps> = ({ columns, data }) => {
                     key={column.accessor}
                     className={`border-b border-[#eee] py-5 px-4 dark:border-strokedark`}
                   >
-                    {renderCellContent(column.type, getNestedValue(row, column.accessor), column.class)}
+                    {renderCellContent(column.type, getNestedValue(row, column.accessor), column.class, row, column)}
                   </td>
                 ))}
               </tr>

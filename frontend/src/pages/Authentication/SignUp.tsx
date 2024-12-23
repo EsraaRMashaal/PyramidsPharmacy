@@ -11,7 +11,7 @@ import { toast } from "react-toastify";
 import signUpImage from "../../assets/sign-up.svg";
 
 // Services
-import { register } from "../../services/auth";
+import { register, login } from "../../services/auth";
 
 const SignUp = () => {
   // State variables to track form inputs
@@ -23,13 +23,17 @@ const SignUp = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
 
   /**
-   * Handles form submission for registration.
-   * @param {Event} e - The form submission event.
+   * Logs the user in after successful registration.
+   * @param {string} email - The user's email.
+   * @param {string} password - The user's password.
+   * @returns {Promise<void>} - A promise that resolves when the user is logged in.
    */
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const loginAfterSignUp = async () => {
     try {
-      const response = await register({ username, password, email, first_name: firstName, last_name: lastName });
+      const response = await login({
+        email,
+        password,
+      });
       const { access, refresh } = response;
 
       // Store the tokens in local storage
@@ -39,13 +43,62 @@ const SignUp = () => {
       // Set logged in state
       setIsLoggedIn(true); // This triggers the redirect
 
-      toast.success("Registration successful!");
+      // toast.success("Login successful!");
     } catch (error) {
-      console.error(error);
-      toast.error("Registration failed. Please try again.");
+      if (error.response && error.response.data) {
+        const errors = error.response.data;
+        for (const key in errors) {
+          if (errors.hasOwnProperty(key)) {
+            errors[key].forEach((message: string) => {
+              toast.error(`${key}: ${message}`);
+            });
+          }
+        }
+      } else {
+        toast.error("Login failed. Please try again.");
+      }
     }
   };
 
+  /**
+   * Handles form submission for registration.
+   * @param {Event} e - The form submission event.
+   */
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await register({
+        username,
+        password,
+        email,
+        first_name: firstName,
+        last_name: lastName,
+      });
+      const { access, refresh } = response;
+
+      // Store the tokens in local storage
+      localStorage.setItem("access_token", access);
+      localStorage.setItem("refresh_token", refresh);
+
+      // Login after sign up
+      loginAfterSignUp();
+
+      toast.success("Registration successful!");
+    } catch (error) {
+      if (error.response && error.response.data) {
+        const errors = error.response.data;
+        for (const key in errors) {
+          if (errors.hasOwnProperty(key)) {
+            errors[key].forEach((message: string) => {
+              toast.error(`${key}: ${message}`);
+            });
+          }
+        }
+      } else {
+        toast.error("Registration failed. Please try again.");
+      }
+    }
+  };
   // Redirect to the dashboard if the user is logged in
   if (isLoggedIn) {
     return <Navigate to="/dashboard" />;

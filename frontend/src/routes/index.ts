@@ -1,7 +1,9 @@
+import { pa } from 'element-plus/es/locale/index.js';
 import { lazy } from 'react';
 
 const Dashboard = lazy(() => import('../pages/dashboard'));
 const medications = lazy(() => import('../pages/medications'));
+const AddMedicationForm = lazy(() => import('../pages/medicationsForm'));
 const medicationsRefills = lazy(() => import('../pages/medicationsRefills'));
 const medicationsRefillsRequest = lazy(() => import('../pages/medicationsRefillsRequest'));
 
@@ -15,6 +17,11 @@ const coreRoutes = [
     path: '/medications',
     title: 'Medications',
     component: medications,
+  },
+  {
+    path: '/add-medication',
+    title: 'Add Medication',
+    component: AddMedicationForm,
   },
   {
     path: '/medications-refills',

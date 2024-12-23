@@ -36,6 +36,7 @@ export const login = async (credentials) => {
  * @returns {Object} The response data from the backend.
  */
 export const register = async (userData) => {
+  logout(); // Clear any existing tokens
   const response = await api.post("/register/", userData); // Adjust endpoint to match your backend
   return response.data;
 }

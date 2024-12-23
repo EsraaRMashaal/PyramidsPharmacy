@@ -42,11 +42,10 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 
     
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5173',  # Frontend running locally
-    'http://127.0.0.1:5173',  # Alternative local frontend
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r'^http://localhost:\d+$',  # Allow any localhost with any port
+    r'^http://127.0.0.1:\d+$',  # Allow any 127.0.0.1 with any port
 ]
-
 
 CORS_ALLOW_CREDENTIALS = True
 

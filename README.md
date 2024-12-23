@@ -1,6 +1,41 @@
-# Pyramids Pharmacy
+# Pyramids Pharmacy Management System
 
-This project is a web application for Pyramids Pharmacy, built with Django for the backend and React for the frontend. The application uses PostgreSQL as the database.
+## Overview
+
+Pyramids Pharmacy Management System is a web application designed to streamline the management of pharmacy operations. The platform includes features such as medication management, refill requests, and user role-based functionalities to ensure efficient and secure operations.
+
+## Features
+
+1. **Authentication**
+
+   - Register: Allows users to create an account.
+   - Login: Enables users to securely log into the system.
+
+2. **Dashboard**
+
+   - Provides a summary of key statistics:
+     - All Medications: Displays the total count of medications available in the system.
+     - Pending Requests: Shows the number of refill requests awaiting approval.
+     - Approved Requests: Lists the number of refill requests that have been approved.
+     - Rejected Requests: Displays the number of refill requests that have been rejected.  
+
+3. **Medications Module**
+
+   - Add New Medication: Users can add new medications to the system.
+   - List All Medications: View a comprehensive list of all medications.
+
+4. **Medications Refills**
+
+    - Add Refill Request: Users can submit a refill request for medications.
+    - List All Requests: View all submitted refill requests.
+    - Verify Request: Allows a higher-role user to verify refill requests (planned for future versions).
+    - Reject Request: Enables a higher-role user to reject refill requests (planned for future versions).
+
+## Future Enhancements
+
+- Role-based access control to handle verification and rejection of refill requests.
+- Improved analytics and reporting on medication usage and refill trends.
+- Integration with third-party APIs for inventory management and supply chain optimization.
 
 ## Prerequisites
 
@@ -92,3 +127,4 @@ Contributions are welcome! please feel free to submit a Pull Request.
 📫 How to reach me:
 
 📞 +20 1013589988  📍 Egypt  ✉️ esraa.mashaal96@gmail.com
+

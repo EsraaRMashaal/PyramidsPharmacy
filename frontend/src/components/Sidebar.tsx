@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 // Asset imports
-import dashboardIcon from '../assets/icons/dashboard.png';
-import medicationsIcon from '../assets/icons/supplement-bottle.png';
-import refillsIcon from '../assets/icons/herbal-medicine.png';
+import dashboardIcon from "../assets/icons/dashboard.png";
+import medicationsIcon from "../assets/icons/supplement-bottle.png";
+import refillsIcon from "../assets/icons/herbal-medicine.png";
+import logoutIcon from "../assets/icons/logout.png";
+
+import { logout } from "../services/auth";
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -13,6 +16,7 @@ interface SidebarProps {
 
 const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { pathname } = location;
 
   const trigger = useRef<any>(null);
@@ -22,6 +26,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const [sidebarExpanded, setSidebarExpanded] = useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   // close on click outside
   useEffect(() => {
@@ -112,7 +121,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     "bg-graydark dark:bg-meta-4"
                   }`}
                 >
-                 <img src={dashboardIcon} alt="Dashboard" className="h-6 w-6" />
+                  <img
+                    src={dashboardIcon}
+                    alt="Dashboard"
+                    className="h-6 w-6"
+                  />
                   Dashboard
                 </NavLink>
               </li>
@@ -125,7 +138,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     pathname === "/medications" && "bg-graydark dark:bg-meta-4"
                   }`}
                 >
-                  <img src={medicationsIcon} alt="Medications" className="h-6 w-6" />
+                  <img
+                    src={medicationsIcon}
+                    alt="Medications"
+                    className="h-6 w-6"
+                  />
                   Medications
                 </NavLink>
               </li>
@@ -138,7 +155,11 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     "bg-graydark dark:bg-meta-4"
                   }`}
                 >
-                  <img src={refillsIcon} alt="Medications Refills" className="h-6 w-6" />
+                  <img
+                    src={refillsIcon}
+                    alt="Medications Refills"
+                    className="h-6 w-6"
+                  />
                   Medications Refills
                 </NavLink>
               </li>
@@ -194,6 +215,19 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </NavLink>
               </li>
               {/* <!-- Menu Item Settings --> */}
+
+              {/* logout */}
+              <li>
+                <button
+                  onClick={handleLogout}
+                  className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
+                    pathname.includes("logout") && "bg-graydark dark:bg-meta-4"
+                  }`}
+                >
+                  <img src={logoutIcon} alt="Logout" className="h-6 w-6" />
+                  Logout
+                </button>
+              </li>
             </ul>
           </div>
         </nav>
