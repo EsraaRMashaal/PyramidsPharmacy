@@ -20,9 +20,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
 
-  const dashboardIcon = 'src/assets/icons/dashboard.png';
-  const medicationsIcon = 'src/assets/icons/supplement-bottle.png';
-  const refillsIcon = 'src/assets/icons/herbal-medicine.png';
+  const dashboardIcon = '../assets/icons/dashboard.png';
+  const medicationsIcon = '../assets/icons/supplement-bottle.png';
+  const refillsIcon = '../assets/icons/herbal-medicine.png';
 
   // close on click outside
   useEffect(() => {
