@@ -127,13 +127,18 @@ The project structure is organized as follows:
 ```plaintext
 PyramidsPharmacy/
 ├── pyramidspharmacy/         # Django backend application
+│   ├── medication/           # Medication management module
+│   ├── pyramidspharmacy/     # Core application logic
+│   ├── users/                # User management module
 ├── frontend/                 # React frontend application
-├── docker-compose.yaml       # Docker Compose configuration file
+├── [docker-compose.yaml](http://_vscodecontentref_/3)       # Docker Compose configuration file
 ├── Dockerfile                # Dockerfile for both frontend and backend services
 └── .env                      # Environment variables file (not included in the repository, needs to be created)
 ```
 
 ## Postman Collection can be found [here](https://galactic-rocket-649595.postman.co/workspace/My-Workspace~02bfb526-da9a-4ab4-8734-dbc4f8fede12/collection/24728437-0998060a-89af-4167-acde-6fd57e6e7a11?action=share&creator=24728437)
+
+You can use the Postman collection to test the API endpoints.
 
 ## Intial Data
 
