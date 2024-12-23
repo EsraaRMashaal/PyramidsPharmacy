@@ -1,0 +1,43 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "volumes": [],
+    "containerDefinitions": [
+      {
+        "name": "web",
+        "image": "esraamashaal/webapp:latest",
+        "memory": 128,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 8000,
+            "hostPort": 8000
+          }
+        ]
+      },
+      {
+        "name": "frontend",
+        "image": "esraamashaal/frontend:latest",
+        "memory": 128,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 5173,
+            "hostPort": 5173
+          }
+        ]
+      },
+      {
+        "name": "db",
+        "image": "postgres:latest",
+        "memory": 128,
+        "essential": true,
+        "portMappings": [
+          {
+            "containerPort": 5432,
+            "hostPort": 5432
+          }
+        ]
+      }
+    ]
+  }
+  
