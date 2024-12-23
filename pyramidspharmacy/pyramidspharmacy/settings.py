@@ -31,6 +31,16 @@ SECRET_KEY = 'django-insecure-@i=w^n&s-aa^4a$hp1)1n#okq@zl%17mj8n-lqgfq$x@6*t!++
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
+# print environment variables for debugging
+print('DEBUG:', DEBUG)
+print('SECRET_KEY:', SECRET_KEY)
+print('DB_NAME:', os.getenv('DB_NAME'))
+print('DB_USER:', os.getenv('DB_USER'))
+print('DB_PASSWORD:', os.getenv('DB_PASSWORD'))
+print('DB_HOST:', os.getenv('DB_HOST'))
+print('DB_PORT:', os.getenv('DB_PORT'))
+
+
     
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',  # Frontend running locally
