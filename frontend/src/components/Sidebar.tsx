@@ -1,7 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-// import Logo from '../images/logo/logo.svg';
-import SidebarLinkGroup from "./SidebarLinkGroup";
+
+// Asset imports
+import dashboardIcon from '../assets/icons/dashboard.png';
+import medicationsIcon from '../assets/icons/supplement-bottle.png';
+import refillsIcon from '../assets/icons/herbal-medicine.png';
 
 interface SidebarProps {
   sidebarOpen: boolean;
@@ -19,10 +22,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   const [sidebarExpanded, setSidebarExpanded] = useState(
     storedSidebarExpanded === null ? false : storedSidebarExpanded === "true"
   );
-
-  const dashboardIcon = '../assets/icons/dashboard.png';
-  const medicationsIcon = '../assets/icons/supplement-bottle.png';
-  const refillsIcon = '../assets/icons/herbal-medicine.png';
 
   // close on click outside
   useEffect(() => {
