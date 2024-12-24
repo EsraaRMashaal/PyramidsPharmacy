@@ -121,7 +121,7 @@ docker-compose up --build
     - Medications: http://localhost:5173/medications
     - Medications: http://localhost:5173/add-medication
     - Refill Requests: http://localhost:5173/medications-refills
-    - Refill Requests: http://localhost:5173/medications-refills-request
+    - Add New Refill Requests: http://localhost:5173/medications-refills-request
 
 ### 5. Stopping the Containers (If Needed)
 
